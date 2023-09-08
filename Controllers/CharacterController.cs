@@ -12,34 +12,29 @@ namespace dotnet.Controllers
     [Route("api/[controller]")]
     public class CharacterController : ControllerBase
     {
-        private static List <Character> characters=new List<Character>{
-            new Character(),
-            new Character{Id=1,  Name="Sem"}
-        } ;
-        private readonly ICharacterService _characterService;
-
+        private readonly ICharacterService  _characterService;
         public CharacterController(ICharacterService characterService)
         {
-            _characterService = characterService;
-        } 
+            _characterService=characterService;
 
+        }
+     
+        
         [HttpGet("GetAll")]
-        public ActionResult<List<Character>> Get()
+        public async Task< ActionResult<List<Character>>> Get()
         {
-            return _characterService.GetAllCharacter();
+            return Ok( await _characterService.GetAllCharacter());
         }
         
-        [HttpGet]
-        public ActionResult<Character>GetSingle(int id)
-        {
-           return _characterService.GetById(id);
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Character>>GetSingle(int id){
+            return Ok(await _characterService.GetById(id));
         }
 
         [HttpPost]
-        public ActionResult<List<Character>>AddCharacter(Character newcharacters)
+        public async Task< ActionResult<List<Character>>>AddCharacter(Character newcharacters)
         {
-           return _characterService.AddNewCharacter(newcharacters);
-             
+            return Ok (await _characterService.AddNewCharacter(newcharacters));
 
         }
     }

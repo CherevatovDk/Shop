@@ -15,26 +15,32 @@ namespace dotnet.Services.CharacterService
             new Character{Id=1 ,Name="Sem"}
 
         };
-        public List<Character> AddNewCharacter(Character NewCharacter)
+
+        public CharacterService()
         {
-            characters.Add(NewCharacter);
-            return characters;
         }
 
-        public List<Character> GetAllCharacter()
-        {
-            return characters;
+        public async Task<ServiceResponse< List<Character>>> AddNewCharacter(Character NewCharacter)
+        {   
+            var serviceResponse=new ServiceResponse<List<Character>>();
+            characters.Add(NewCharacter);
+            serviceResponse.Data=characters;
+            
+            return serviceResponse;
+        }
+
+        public async Task<ServiceResponse< List<Character>>> GetAllCharacter()
+        {   var serviceResponse=new ServiceResponse<List<Character>>();
+            serviceResponse.Data=characters;
+            return serviceResponse;
            
         }
 
-        public Character GetById(int id)
-        {   
+        public async Task<ServiceResponse< Character>> GetById(int id)
+        {   var serviceResponse = new ServiceResponse<Character>();
             var character=characters.FirstOrDefault(c=>c.Id==id);
-            if(character is not null)
-            {
-                return character;
-            }
-            throw new Exception("Character is not found");
+            serviceResponse.Data=character;
+            return serviceResponse;
              
             
         }
