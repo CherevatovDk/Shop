@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using dotnet.Dtos.Characters;
 using dotnet.Models;
 using dotnet.Services.CharacterService;
 using Microsoft.AspNetCore.Mvc;
@@ -21,21 +22,31 @@ namespace dotnet.Controllers
      
         
         [HttpGet("GetAll")]
-        public async Task< ActionResult<List<Character>>> Get()
+        public async Task< ActionResult<ServiceResponse<List<GetCharacterDto>>>> Get()
         {
             return Ok( await _characterService.GetAllCharacter());
         }
         
         [HttpGet("{id}")]
-        public async Task<ActionResult<Character>>GetSingle(int id){
+        public async Task<ActionResult<ServiceResponse<GetCharacterDto>>>GetSingle(int id){
             return Ok(await _characterService.GetById(id));
         }
 
         [HttpPost]
-        public async Task< ActionResult<List<Character>>>AddCharacter(Character newcharacters)
+        public async Task< ActionResult<ServiceResponse<List<AddCharacterDto>>>>AddCharacter(AddCharacterDto newcharacters)
         {
             return Ok (await _characterService.AddNewCharacter(newcharacters));
 
+        }
+        [HttpPut]
+        public async Task<ActionResult<ServiceResponse<UpdateCharacterDto>>>UpdateCharacter(UpdateCharacterDto updateCharacterDto)
+        {
+            var respons= await _characterService.UpdateCharacter(updateCharacterDto);
+            if(respons.Data is null)
+            {
+                return NotFound(respons);
+            }
+            return Ok(respons);
         }
     }
 }

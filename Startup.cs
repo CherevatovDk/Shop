@@ -34,6 +34,8 @@ namespace dotnet
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "dotnet", Version = "v1" });
             });
+            services.AddAutoMapper(typeof(Program).Assembly);
+            
             services.AddScoped<ICharacterService, CharacterService>(); 
         }
 

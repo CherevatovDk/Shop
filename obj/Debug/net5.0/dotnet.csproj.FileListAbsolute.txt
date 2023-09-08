@@ -27,3 +27,9 @@ C:\Development\dotnet\obj\Debug\net5.0\dotnet.dll
 C:\Development\dotnet\obj\Debug\net5.0\ref\dotnet.dll
 C:\Development\dotnet\obj\Debug\net5.0\dotnet.pdb
 C:\Development\dotnet\obj\Debug\net5.0\dotnet.genruntimeconfig.cache
+C:\Development\dotnet\bin\Debug\net5.0\AutoMapper.dll
+C:\Development\dotnet\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Development\dotnet\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Development\dotnet\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
+C:\Development\dotnet\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+C:\Development\dotnet\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
