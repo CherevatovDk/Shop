@@ -39,6 +39,28 @@ namespace dotnet.Services.CharacterService
             return serviceResponse;
         }
 
+        public async Task<ServiceResponse<List<GetCharacterDto>>> DeleteCharacter(int id)
+        {
+            var serviceResponse=new ServiceResponse<List<GetCharacterDto>>();
+
+            try
+            {
+                var character=characters.First(c=> c.Id==id);
+                if(character is null)
+                    throw new Exception($"Character wis id'{id}' not found");
+
+                characters.Remove(character);
+                serviceResponse.Data=characters.Select(c=> _mapper.Map<GetCharacterDto>(c)).ToList();
+            }
+            catch(Exception ex)
+            {
+                serviceResponse.Sucsess=false;
+                serviceResponse.Mage=ex.Message;
+
+            }
+            return serviceResponse;
+        }
+
         public async Task<ServiceResponse< List<GetCharacterDto>>> GetAllCharacter()
         {   var serviceResponse=new ServiceResponse<List<GetCharacterDto>>();
             serviceResponse.Data=characters.Select(c=> _mapper.Map<GetCharacterDto>(c)).ToList();

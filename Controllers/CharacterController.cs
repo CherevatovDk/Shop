@@ -48,5 +48,15 @@ namespace dotnet.Controllers
             }
             return Ok(respons);
         }
+        [HttpDelete("{id}")]
+        public async Task< ActionResult<ServiceResponse<List<GetCharacterDto>>>>DeleteCharacter(int id)
+        {
+            var respons= await _characterService.DeleteCharacter(id);
+            if (respons.Data is null){return NotFound(respons);}
+            return Ok(respons);
+            
+
+        }
+
     }
 }
