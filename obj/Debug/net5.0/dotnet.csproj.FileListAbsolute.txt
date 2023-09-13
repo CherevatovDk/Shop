@@ -5,7 +5,6 @@ C:\Development\dotnet\bin\Debug\net5.0\dotnet.deps.json
 C:\Development\dotnet\bin\Debug\net5.0\dotnet.runtimeconfig.json
 C:\Development\dotnet\bin\Debug\net5.0\dotnet.runtimeconfig.dev.json
 C:\Development\dotnet\bin\Debug\net5.0\dotnet.dll
-C:\Development\dotnet\bin\Debug\net5.0\ref\dotnet.dll
 C:\Development\dotnet\bin\Debug\net5.0\dotnet.pdb
 C:\Development\dotnet\bin\Debug\net5.0\Microsoft.OpenApi.dll
 C:\Development\dotnet\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
@@ -19,7 +18,6 @@ C:\Development\dotnet\obj\Debug\net5.0\dotnet.csproj.CoreCompileInputs.cache
 C:\Development\dotnet\obj\Debug\net5.0\dotnet.MvcApplicationPartsAssemblyInfo.cs
 C:\Development\dotnet\obj\Debug\net5.0\dotnet.MvcApplicationPartsAssemblyInfo.cache
 C:\Development\dotnet\obj\Debug\net5.0\staticwebassets\dotnet.StaticWebAssets.Manifest.cache
-C:\Development\dotnet\obj\Debug\net5.0\staticwebassets\dotnet.StaticWebAssets.xml
 C:\Development\dotnet\obj\Debug\net5.0\scopedcss\bundle\dotnet.styles.css
 C:\Development\dotnet\obj\Debug\net5.0\dotnet.RazorTargetAssemblyInfo.cache
 C:\Development\dotnet\obj\Debug\net5.0\dotnet.csproj.CopyComplete
@@ -33,3 +31,11 @@ C:\Development\dotnet\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.
 C:\Development\dotnet\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
 C:\Development\dotnet\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
 C:\Development\dotnet\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
+C:\Development\dotnet\bin\Debug\net5.0\global.json
+C:\Development\dotnet\bin\Debug\net5.0\dotnet.StaticWebAssets.xml
+C:\Development\dotnet\obj\Debug\net5.0\staticwebassets\dotnet.StaticWebAssets.Pack.cache
+C:\Development\dotnet\obj\Debug\net5.0\staticwebassets\msbuild.dotnet.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Development\dotnet\obj\Debug\net5.0\staticwebassets\msbuild.build.dotnet.props
+C:\Development\dotnet\obj\Debug\net5.0\staticwebassets\msbuild.buildMultiTargeting.dotnet.props
+C:\Development\dotnet\obj\Debug\net5.0\staticwebassets\msbuild.buildTransitive.dotnet.props
+C:\Development\dotnet\obj\Debug\net5.0\refint\dotnet.dll
