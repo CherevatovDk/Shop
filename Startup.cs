@@ -11,8 +11,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Microsoft.OpenApi.Models;
 
+using dotnet.Models;
+using dotnet.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace dotnet
 {
@@ -24,16 +26,18 @@ namespace dotnet
         }
 
         public IConfiguration Configuration { get; }
+   
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            
+            services.AddDbContext<DataContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "dotnet", Version = "v1" });
-            });
+            
+            
+            services.AddSwaggerGen();
             services.AddAutoMapper(typeof(Program).Assembly);
             
             services.AddScoped<ICharacterService, CharacterService>(); 
